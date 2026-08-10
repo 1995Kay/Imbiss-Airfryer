@@ -1,0 +1,15 @@
+p {
+    color: green
+    front-size: 24px
+}
+p. Klasse {
+    color:red
+}
+p,
+.Klasse {
+    font-weight:bold;
+
+}
+test {
+    color: blue;
+}

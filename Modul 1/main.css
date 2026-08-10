@@ -1,0 +1,17 @@
+.sec {
+  background-color: rgb(255, 145, 0);
+  padding: 10px;
+  font-size: 20px;
+}
+
+.Main {
+  background-color: rgb(0, 195, 255);
+  padding: 80px;
+  display: flex;
+  gap: 10px;
+  flex-direction: center;
+  justify-content: center;
+}
+.Main:hover .sec:hover {
+  background-color: rgb(0, 255, 0);
+}
