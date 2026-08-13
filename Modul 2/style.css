@@ -2,25 +2,22 @@ html {
   scroll-behavior: smooth;
 }
 
-/* 1. Den Hintergrund dunkel machen, damit wir weiße Schrift sehen */
 body {
   background-color: rgb(0, 0, 0);
 }
 
-/* 2. Unser Elternteil: Die Navigation zentrieren */
 nav {
   display: flex;
-  justify-content: center; /* Schiebt die Links in die Mitte */
+  justify-content: center;
   gap: 20px;
 }
 
-/* 3. Unsere Kinder: Das Aussehen der Links */
 nav a {
-  color: rgb(255, 128, 0); /* Deine gewünschte weiße Schrift */
-  text-decoration: none; /* Entfernt den standardmäßigen blauen Unterstrich von Links */
-  padding: 10px; /* Fügt etwas Abstand um die Navigation herum hinzu */
-  border: 5px solid black; /* Fügt einen schwarzen Rahmen um den Link hinzu */
-  display: inline-block; /* Macht den Link zu einem Block, damit wir ihn stylen können */
+  color: rgb(255, 128, 0);
+  text-decoration: none;
+  padding: 10px;
+  border: 5px solid black;
+  display: inline-block;
   background-color: rgb(53, 53, 65);
 }
 
@@ -28,17 +25,16 @@ nav a:hover {
   color: red;
 }
 
-/* --- HERO BEREICH --- */
 .hero {
-  background-color: rgb(50, 50, 50); /* Backup-Farbe */
+  background-color: rgb(50, 50, 50);
   background-image: url("Pommes.png");
-  background-size: cover; /* Bild füllt den ganzen Kasten */
-  background-position: center; /* Fokus in die Mitte */
-  background-repeat: no-repeat; /* Keine Wiederholung */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   color: rgb(249, 125, 0);
   padding: 100px;
   text-align: center;
-  text-shadow: 2px 2px 8px black; /* Hebt den Text vom Bild ab */
+  text-shadow: 2px 2px 8px black;
 }
 
 .hero a {
@@ -54,32 +50,30 @@ nav a:hover {
   color: red;
 }
 
-/* --- ÜBER UNS BEREICH (Zusammengefasst & Bereinigt) --- */
 .about {
   display: flex;
-  flex-wrap: wrap; /* WICHTIG: Erlaubt den Umbruch auf Handys */
+  flex-wrap: wrap;
   gap: 40px;
   padding: 80px 20px;
-  background-image: url("Banner.Pommes.2.jpg"); /* Das neue Bild */
-  background-color: rgb(20, 20, 20); /* Backup-Farbe */
+  background-image: url("Banner.Pommes.2.jpg");
+  background-color: rgb(20, 20, 20);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   color: white;
-  align-items: center; /* Zentriert die Inhalte vertikal */
+  align-items: center;
 }
 
 .about div {
-  flex: 1; /* Text und Karte nehmen gleich viel Platz ein */
-  min-width: 300px; /* WICHTIG: Rutschen untereinander, wenn der Platz zu eng wird */
+  flex: 1;
+  min-width: 300px;
 }
 
 .about-map iframe {
-  width: 100%; /* Überschreibt die feste Breite aus dem HTML-Code */
-  max-width: 100%; /* Verhindert das Ausbrechen über den Rand auf dem Handy */
+  width: 100%;
+  max-width: 100%;
 }
 
-/* --- FOOTER BEREICH --- */
 footer {
   background-color: rgb(54, 54, 54);
   color: white;
@@ -89,12 +83,121 @@ footer {
 .footer-content {
   display: flex;
   justify-content: space-around;
-  flex-wrap: wrap; /* Erlaubt das Umbrechen auf neue Zeilen */
-  gap: 40px; /* Abstand, wenn die Elemente untereinander rutschen */
+  flex-wrap: wrap;
+  gap: 40px;
   max-width: 1200px;
   margin: 0 auto;
 }
 
 .footer-box {
-  min-width: 250px; /* Verhindert das Quetschen auf dem Handy */
+  min-width: 250px;
+}
+
+.menu-background {
+  background-color: #6b6b69;
+  background-image: url("speisekarte.main.background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  padding: 100px 20px;
+  min-height: 100vh;
+}
+
+.paper-card {
+  background-color: #8d8d8d;
+  background-image: url("speisekarte.background.jpg");
+  background-size: cover;
+
+  width: 100%;
+  max-width: 800px;
+
+  padding: 50px;
+
+  color: rgb(30, 30, 30);
+
+  box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.7);
+  border-radius: 5px;
+}
+
+.menu-category {
+  color: rgb(200, 50, 0);
+  border-bottom: 2px solid rgb(200, 50, 0);
+  margin-top: 40px;
+  margin-bottom: 20px;
+  padding-bottom: 5px;
+}
+
+.menu-item {
+  margin-bottom: 20px;
+}
+
+.menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.menu-header h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: rgb(0, 0, 0);
+}
+
+.price {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: rgb(200, 50, 0);
+}
+
+.menu-item p {
+  margin: 5px 0 0 0;
+  font-size: 0.95rem;
+  color: rgb(80, 80, 80);
+}
+
+@media (max-width: 768px) {
+  .menu-background {
+    padding: 20px 10px;
+  }
+
+  .paper-card {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .menu-category {
+    font-size: 1.2rem;
+  }
+
+  .menu-header {
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  .menu-header h3 {
+    font-size: 1rem;
+    flex: 1;
+    min-width: 70%;
+  }
+
+  .price {
+    font-size: 1rem;
+  }
+}
+
+nav {
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 10px;
+}
+
+nav a {
+  font-size: 0.9rem;
+  padding: 8px 10px;
+  border-width: 3px;
 }
