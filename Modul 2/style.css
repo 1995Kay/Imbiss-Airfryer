@@ -1,13 +1,19 @@
+html {
+  scroll-behavior: smooth;
+}
+
 /* 1. Den Hintergrund dunkel machen, damit wir weiße Schrift sehen */
 body {
   background-color: rgb(0, 0, 0);
 }
+
 /* 2. Unser Elternteil: Die Navigation zentrieren */
 nav {
   display: flex;
   justify-content: center; /* Schiebt die Links in die Mitte */
   gap: 20px;
 }
+
 /* 3. Unsere Kinder: Das Aussehen der Links */
 nav a {
   color: rgb(255, 128, 0); /* Deine gewünschte weiße Schrift */
@@ -17,31 +23,30 @@ nav a {
   display: inline-block; /* Macht den Link zu einem Block, damit wir ihn stylen können */
   background-color: rgb(53, 53, 65);
 }
+
 nav a:hover {
   color: red;
 }
 
+/* --- HERO BEREICH --- */
 .hero {
-  background-color: rgb(
-    50,
-    50,
-    50
-  ); /* Das lassen wir als Backup-Farbe drin, falls das Bild mal nicht lädt */
+  background-color: rgb(50, 50, 50); /* Backup-Farbe */
   background-image: url("Pommes.png");
-  background-size: cover; /* Weist den Browser an, das Bild so zu skalieren, dass der gesamte Kasten gefüllt wird, ohne das Bild zu stauchen */
-  background-position: center; /* Schiebt den Fokus in die Mitte, damit die Currywurst und Pommes gut sichtbar bleiben */
-  background-repeat: no-repeat; /* Verhindert, dass das Bild mehrfach nebeneinander geklebt wird */
-  color: rgb(249, 125, 0); /* Macht den Text (außer den Link) weiß */
-  padding: 100px; /* Machen wir mal etwas größer, damit man vom Bild mehr sieht */
-  text-align: center; /* Zentriert den Text in der Mitte */
-  text-shadow: 2px 2px 8px black;
+  background-size: cover; /* Bild füllt den ganzen Kasten */
+  background-position: center; /* Fokus in die Mitte */
+  background-repeat: no-repeat; /* Keine Wiederholung */
+  color: rgb(249, 125, 0);
+  padding: 100px;
+  text-align: center;
+  text-shadow: 2px 2px 8px black; /* Hebt den Text vom Bild ab */
 }
+
 .hero a {
-  color: white; /* Deine gewünschte weiße Schrift */
-  text-decoration: none; /* Entfernt den standardmäßigen blauen Unterstrich von Links */
-  padding: 10px; /* Fügt etwas Abstand um die Navigation herum hinzu */
-  border: 2px solid black; /* Fügt einen schwarzen Rahmen um den Link hinzu */
-  display: inline-block; /* Macht den Link zu einem Block, damit wir ihn stylen können */
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  border: 2px solid black;
+  display: inline-block;
   background-color: blue;
 }
 
@@ -49,43 +54,47 @@ nav a:hover {
   color: red;
 }
 
-.about {
-  display: flex; /* Macht die Sektion zum Flexbox-Elternteil */
-  gap: 40px; /* Erzeugt einen sauberen Abstand zwischen Text und Karte */
-  padding: 80px; /* Macht den Bereich schön luftig */
-  background-color: rgb(
-    20,
-    20,
-    20
-  ); /* Ein dunkler Hintergrund passend zum Imbiss-Style */
-  color: white;
-}
-
-.about div {
-  flex: 1; /* Sorgt dafür, dass Text und Karte exakt gleich viel Platz auf dem Bildschirm einnehmen */
-}
-.about {
-  display: flex; /* Zwingt Text und Karte nebeneinander */
-  gap: 5px; /* Abstand zwischen Text und Karte */
-  padding: 1px; /* Macht den Bereich schön luftig */
-  background-color: rgb(20, 20, 20); /* Passender dunkler Imbiss-Style */
-  color: white;
-  align-items: center; /* Zentriert die Inhalte vertikal */
-  font-size: 2cap; /* Macht den Text etwas größer und besser lesbar */
-}
-
-.about div {
-  flex: 1; /* Teilt den Platz gleichmäßig auf (50% Text, 50% Karte) */
-}
-
+/* --- ÜBER UNS BEREICH (Zusammengefasst & Bereinigt) --- */
 .about {
   display: flex;
+  flex-wrap: wrap; /* WICHTIG: Erlaubt den Umbruch auf Handys */
   gap: 40px;
-  padding: 80px;
-  background-image: url("Banner.Pommes.2.jpg"); /* Lädt das neue Bild als Hintergrund */
-  background-size: cover; /* Skaliert das Bild perfekt auf die Box */
-  background-position: center; /* Zentriert das Bild */
-  background-repeat: no-repeat; /* Verhindert Wiederholungen */
+  padding: 80px 20px;
+  background-image: url("Banner.Pommes.2.jpg"); /* Das neue Bild */
+  background-color: rgb(20, 20, 20); /* Backup-Farbe */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   color: white;
-  align-items: center;
+  align-items: center; /* Zentriert die Inhalte vertikal */
+}
+
+.about div {
+  flex: 1; /* Text und Karte nehmen gleich viel Platz ein */
+  min-width: 300px; /* WICHTIG: Rutschen untereinander, wenn der Platz zu eng wird */
+}
+
+.about-map iframe {
+  width: 100%; /* Überschreibt die feste Breite aus dem HTML-Code */
+  max-width: 100%; /* Verhindert das Ausbrechen über den Rand auf dem Handy */
+}
+
+/* --- FOOTER BEREICH --- */
+footer {
+  background-color: rgb(54, 54, 54);
+  color: white;
+  padding: 20px 20px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap; /* Erlaubt das Umbrechen auf neue Zeilen */
+  gap: 40px; /* Abstand, wenn die Elemente untereinander rutschen */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-box {
+  min-width: 250px; /* Verhindert das Quetschen auf dem Handy */
 }
